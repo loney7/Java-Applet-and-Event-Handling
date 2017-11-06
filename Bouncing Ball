@@ -1,0 +1,51 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+
+/**
+ *
+ * @author ankitJain
+ */
+public class anim extends Applet {
+int x=10,y=100;
+int r=20;
+int flag=0;
+int flagy=0;
+   public void paint(Graphics g)
+   {
+       
+       g.fillOval(x,y,r,r);
+               try{
+                   Thread.sleep(10);
+               }
+               catch(Exception e)
+               {
+               
+               }
+               if(y>200)
+               {
+                   flagy=1;
+               }
+               if(y<100)
+               {
+                   flagy=0;
+               }
+                    if(flagy==0){y=y+10;}
+               if(flagy==1){y=y-10;}
+                       
+               
+               if(x>200)
+               {
+                 flag=1;
+               }
+               if(x<10)
+               {
+                   flag=0;
+               }
+               if(flag==0){x=x+10;}
+               if(flag==1){x=x-10;}
+              
+                  
+       repaint();
+      
+   }
+}
